@@ -20,7 +20,7 @@ spring:
   jpa:
     hibernate:
       # H2를 이용한 local 개발 단계에서 사용
-      ddl-auto: create-drop
+      ddl-auto: update
 #      # MySQL을 이용한 배포 단계에서 사용
 #      ddl-auto: update
     properties:
