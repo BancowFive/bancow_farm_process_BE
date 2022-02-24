@@ -1,34 +1,13 @@
-# H2를 이용한 local 개발 단계에서 사용
+---
+# 개발 환경에서 사용(Mysql)
 spring:
-  datasource:
-    driver-class-name: org.h2.Driver
-    url: jdbc:h2:tcp://localhost/~/process;
-    username: sa
-    password:
+  profiles:
+    active: dev
 
+---
+## local 환경에서 사용(H2 DB)
+spring:
+  profiles:
+    active: local
 
-# MySQL을 이용한 배포 단계에서 사용
-#spring:
-#  datasource:
-#    driver-class-name: com.mysql.cj.jdbc.Driver
-#    url: jdbc:mysql://bancow5-database.c0tjxdlcevpx.ap-northeast-2.rds.amazonaws.com/bancow5
-#    username: admin
-#    password: bancow5!
-
-
-  jpa:
-    hibernate:
-      # H2를 이용한 local 개발 단계에서 사용
-      ddl-auto: create
-#      # MySQL을 이용한 배포 단계에서 사용
-#      ddl-auto: update
-    properties:
-      hibernate:
-        format_sql: true
-
-logging:
-  level:
-    org:
-      hibernate:
-        SQL: debug
-        type: trace
+#---
